@@ -18,13 +18,13 @@ class TaskTest extends TestCase
     {
         // 全件取得
         $tasks = Task::all();
-        // 3件取得できるはず
-        $this->assertEquals(3, count($tasks));
+        // 2件取得できるはず
+        $this->assertEquals(2, count($tasks));
 
         // 実行完了していないものを取得
         $taskNotFinished = Task::where('executed', false)->get();
-        // 2件取得できるはず
-        $this->assertEquals(2, count($taskNotFinished));
+        // 1件取得できるはず
+        $this->assertEquals(1, count($taskNotFinished));
 
         // 実行完了しているものを取得
         $taskFinished = Task::where('executed', true)->get();
